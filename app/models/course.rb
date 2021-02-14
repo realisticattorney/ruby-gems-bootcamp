@@ -9,6 +9,16 @@ def to_s
 end
 has_rich_text :description
 
+LANGUAGES = [:"English", :"German", :"Spanish"]
+def self.languages
+LANGUAGES.map { |language| [language, language] }
+end
+
+LEVELS = [:"Beginner", :"Intermediate", :"Advanced"]
+def self.levels
+LEVELS.map { |level| [level, level] }
+end
+
 
 extend FriendlyId
 friendly_id :title, use: :slugged
