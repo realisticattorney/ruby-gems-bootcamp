@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :courses
   resources :users, only: [:index, :edit, :show, :update]
   get 'static_pages/activity'
-  
       
   root 'static_pages#landing_page'
   
