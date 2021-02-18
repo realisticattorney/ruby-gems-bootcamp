@@ -7,7 +7,10 @@
   .card-footer
     .text-center
       = number_to_currency(course.price)
-  .card- 
+  .card-footer
+    .fa.fa-book
+    = course.lessons.count
+  .card-footer
     .row
       .col-md-6
         .fa.fa-globe-africa
@@ -24,7 +27,8 @@
       .col-md-6
         .text-right
           .fa.fa-chalkboard-teacher
-          = course.user.username
+          = link_to course.user.username, user_path(course.user)
+  - if current_user
     - if policy(course).edit?
       .card-footer
         /- if policy(course).edit?

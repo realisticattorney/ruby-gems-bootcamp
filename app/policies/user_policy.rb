@@ -6,10 +6,10 @@ class UserPolicy < ApplicationPolicy
   end
   
   def edit?
-    @user.has_role?(:admin) or @record.email = @user.email
+    @user.has_role?(:admin) || @record.email == @user.email
   end
 
   def update?
-    @user.has_role?(:admin) or @record.email = @user.email
+    @user.has_role?(:admin) || @record.email == @user.email
   end
 end
